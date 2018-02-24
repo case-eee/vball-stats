@@ -1,13 +1,20 @@
-<h2><%= @round.name %></h2>
+<div class="header">
+  <p class="title">Stats for <%= @round.name %> at <%= @round.team.name %></p>
+  <div class="stats">
+    <%= link_to "Take Stats", take_stats_path(@round.team, @round) %>
+  </div>
+</div>
 
-<% @players.each do |player| %>
-  <b><%= player.name%></b>
-  <br>
-  Serves:
-  <%= find_average_hits(player, @round.id) %>
-  <br>
-  Passes:
-  <%= find_average_passes(player, @round.id) %>
-  <br>
-  <br>
-<% end %>
+<div class="content stats-view">
+  <% @players.each do |player| %>
+    <b><%= player.name%></b>
+    <br>
+    Serves:
+    <strong><%= find_average_hits(player, @round.id) %></strong>
+    <br>
+    Passes:
+    <strong><%= find_average_passes(player, @round.id) %></strong>
+    <br>
+    <br>
+  <% end %>
+</div>

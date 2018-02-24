@@ -1,7 +1,13 @@
-<h1><%= @round.name %> for <%= @round.team.name %></h1>
+<div class="header">
+  <p class="title"><%= @round.name %> for <%= @round.team.name %></p>
+  <div class="stats">
+    <%= link_to "View Stats", round_stats_path(@round) %>
+  </div>
+</div>
+
 <br>
 
-<div>
+<div class="content">
   <table>
     <tr>
       <th>Player</th>
