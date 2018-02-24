@@ -17,7 +17,7 @@
     </tr>
     <% @players.limit(3).each do |player| %>
       <tr class="buttons">
-        <td><%= player.name %></td>
+        <td><strong><%= player.name %></strong></td>
         <td>
           <%= button_to "Zero", round_hit_path(@round, player, {score: 0}), class: "hit" %>
           <%= button_to "One", round_hit_path(@round, player, {score: 1}), class: "hit" %>
@@ -42,7 +42,7 @@
     </tr>
     <% @players.find(4, 5, 6).each do |player| %>
       <tr class="buttons">
-        <td><%= player.name %></td>
+        <td><strong><%= player.name %></strong></td>
         <td>
           <%= button_to "Zero", round_hit_path(@round, player, {score: 0}), class: "hit" %>
           <%= button_to "One", round_hit_path(@round, player, {score: 1}), class: "hit" %>
@@ -67,7 +67,7 @@
     </tr>
     <% @players.last(3).each do |player| %>
       <tr class="buttons">
-        <td><%= player.name %></td>
+        <td><strong><%= player.name %></strong></td>
         <td>
           <%= button_to "Zero", round_hit_path(@round, player, {score: 0}), class: "hit" %>
           <%= button_to "One", round_hit_path(@round, player, {score: 1}), class: "hit" %>
