@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   get "/rounds/:id/stats" => "rounds#stats"
 
   post "/rounds/:round_id/spikes/:player_id" => "spikes#create", as: :round_spike
-  post "/rounds/:round_id/passes/:player_id" => "services#create", as: :round_pass
+  post "/rounds/:round_id/passes/:player_id" => "passes#create", as: :round_pass
   post "/rounds/:round_id/hits/:player_id" => "hits#create", as: :round_hit
 end

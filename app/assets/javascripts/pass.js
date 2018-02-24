@@ -1,8 +1,8 @@
 $(document).ready(function() {
-  $(".hit").on("click", function(event) {
+  $(".pass").on("click", function(event) {
     event.preventDefault();
     var url = $(this).parent().attr("action");
-    $(this).css("background-color", "pink");
+    $(this).css("background-color", "yellow");
 
     function setBackground() {
       $(event.target).css("background-color", "white");

@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: "Georgia";
+  background-color: #30DDE5;
+}
+
+.buttons {
+  font-size: 14px;
+}
+
+.hit {
+  font-size: 10px;
+}
+
+.pass {
+  font-size: 10px;
+}
+
+input {
+  width: 50px;
+  font-family: "Georgia";
+}
+
+th {
+  font-size: 14px;
+}
+
+table, th, td {
+  /*border: 1px solid black;*/
+}
+
+div {
+  column-count: 3;
+}

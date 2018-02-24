@@ -1,25 +1,79 @@
-This is where we'll take stats!
+<h1><%= @round.name %> for <%= @round.team.name %></h1>
+<br>
 
-<%= @round.name %> for <%= @round.team.name %>
-
-<table>
-  <tr>
-    <th>Player</th>
-    <th>Serves</th>
-    <th>&nbsp;</th>
-    <th>Pases</th>
-  </tr>
-  <% @players.each do |player| %>
+<div>
+  <table>
     <tr>
-      <td><%= player.name %></td>
-      <td>
-        <%= button_to "Zero", round_hit_path(@round, player, {score: 0}), class: "zero_hit" %>
-        <%= button_to "One" %>
-        <%= button_to "Two" %>
-        <%= button_to "Three" %>
-      </td>
-      <td>&nbsp;</td>
-      <td><%= button_to "Zero" %> <%= button_to "One" %> <%= button_to "Two" %> <%= button_to "Three" %></td>
+      <th>Player</th>
+      <th>Serves</th>
+      <th>&nbsp;</th>
+      <th>Pases</th>
     </tr>
-  <% end %>
-</table>
+    <% @players.limit(3).each do |player| %>
+      <tr class="buttons">
+        <td><%= player.name %></td>
+        <td>
+          <%= button_to "Zero", round_hit_path(@round, player, {score: 0}), class: "hit" %>
+          <%= button_to "One", round_hit_path(@round, player, {score: 1}), class: "hit" %>
+          <%= button_to "Two", round_hit_path(@round, player, {score: 2}), class: "hit" %>
+          <%= button_to "Three", round_hit_path(@round, player, {score: 3}), class: "hit" %>
+        </td>
+        <td>&nbsp;</td>
+        <td><%= button_to "Zero", round_pass_path(@round, player, {score: 0}), class: "pass" %>
+          <%= button_to "One", round_pass_path(@round, player, {score: 0}), class: "pass" %>
+          <%= button_to "Two", round_pass_path(@round, player, {score: 0}), class: "pass" %>
+          <%= button_to "Three", round_pass_path(@round, player, {score: 0}), class: "pass" %>
+        </td>
+      </tr>
+    <% end %>
+
+    <tr>
+      <th>Player</th>
+      <th>Serves</th>
+      <th>&nbsp;</th>
+      <th>Pases</th>
+    </tr>
+    <% @players.find(4, 5, 6).each do |player| %>
+      <tr class="buttons">
+        <td><%= player.name %></td>
+        <td>
+          <%= button_to "Zero", round_hit_path(@round, player, {score: 0}), class: "hit" %>
+          <%= button_to "One", round_hit_path(@round, player, {score: 1}), class: "hit" %>
+          <%= button_to "Two", round_hit_path(@round, player, {score: 2}), class: "hit" %>
+          <%= button_to "Three", round_hit_path(@round, player, {score: 3}), class: "hit" %>
+        </td>
+        <td>&nbsp;</td>
+        <td><%= button_to "Zero", round_pass_path(@round, player, {score: 0}), class: "pass" %>
+          <%= button_to "One", round_pass_path(@round, player, {score: 0}), class: "pass" %>
+          <%= button_to "Two", round_pass_path(@round, player, {score: 0}), class: "pass" %>
+          <%= button_to "Three", round_pass_path(@round, player, {score: 0}), class: "pass" %>
+        </td>
+      </tr>
+    <% end %>
+
+
+    <tr>
+      <th>Player</th>
+      <th>Serves</th>
+      <th>&nbsp;</th>
+      <th>Pases</th>
+    </tr>
+    <% @players.last(3).each do |player| %>
+      <tr class="buttons">
+        <td><%= player.name %></td>
+        <td>
+          <%= button_to "Zero", round_hit_path(@round, player, {score: 0}), class: "hit" %>
+          <%= button_to "One", round_hit_path(@round, player, {score: 1}), class: "hit" %>
+          <%= button_to "Two", round_hit_path(@round, player, {score: 2}), class: "hit" %>
+          <%= button_to "Three", round_hit_path(@round, player, {score: 3}), class: "hit" %>
+        </td>
+        <td>&nbsp;</td>
+        <td><%= button_to "Zero", round_pass_path(@round, player, {score: 0}), class: "pass" %>
+          <%= button_to "One", round_pass_path(@round, player, {score: 0}), class: "pass" %>
+          <%= button_to "Two", round_pass_path(@round, player, {score: 0}), class: "pass" %>
+          <%= button_to "Three", round_pass_path(@round, player, {score: 0}), class: "pass" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
